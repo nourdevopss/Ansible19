@@ -41,15 +41,15 @@ jobs:
       - run:
           name: Run Playbook and Configure server
           command: |
-            ansible-playbook -i [inventory-file] [playbook-file]
+            ansible-playbook -i inventory.txt main-remote.yml
 # Sequential workflow
 
 workflows:
   # Name the workflow
   myWorkflow:
     jobs:
-      - helloworld
-      - create_infrastructure
-      - configure_infrastructure:
-          requires:
-            - create_infrastructure
+     #- helloworld
+     #- create_infrastructure
+      - configure_infrastructure #:
+          #requires:
+            #- create_infrastructure
